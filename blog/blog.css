@@ -64,7 +64,7 @@ main{
     justify-items: center;
 }
 
-.bookdescription h2, .bookdescription h2 {
+.bookdescription h2, .bookdescription p {
     justify-self: left;
 }
 
