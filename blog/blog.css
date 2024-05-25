@@ -1,0 +1,77 @@
+:root {
+    --goldcolor: #EFC69B;
+    --redcolor: #AF1B3F;
+    --darkcolor: #473144;
+    --bodyfont: Helvetica, Arial, sans-serif;
+    --headlinefont: Lora, Impact, serif;
+}
+
+body {
+    font-family: var(--bodyfont);
+    margin: 0;
+}
+
+h1 {
+    font-family: var(--headlinefont);
+    text-align: center;
+}
+h2 {
+    font-family: var(--headlinefont);
+    color: var(--redcolor);
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: var(--redcolor);
+}
+nav{
+    border-bottom: 1px solid var(--goldcolor) ;
+    border-top: 1px solid var(--goldcolor) ;
+}
+nav ul {
+    font-size: large;
+    display: grid;
+    grid-template-columns: 50px 80px 75px;
+    justify-content: end;
+    justify-items: end;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+#filter {
+    border: 1px solid var(--goldcolor);
+    margin: 10%;
+}
+.article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.details {
+    text-align: right;
+    margin: 10px;
+    padding: 10px;
+    border-right: 1px solid var(--goldcolor);
+}
+.bookdescription {
+    display: grid;
+    justify-items: center;
+}
+
+.bookdescription h2, .bookdescription h2 {
+    justify-self: left;
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+}
+.skiptocontent a:focus {
+    top: 0px;
+}
