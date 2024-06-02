@@ -29,40 +29,49 @@ a {
 nav{
     border-bottom: 1px solid var(--goldcolor) ;
     border-top: 1px solid var(--goldcolor) ;
+
 }
 nav ul {
     font-size: large;
     display: grid;
-    grid-template-columns: 50px 80px 75px;
+    grid-template-columns: 65px 75px 75px;
     justify-content: end;
-    justify-items: end;
+    justify-items: left;
     padding: 10px;
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 90%;
 }
 main{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    margin: 0 auto;
+    max-width: 90%;
 }
 #filter {
     border: 1px solid var(--goldcolor);
-    margin: 10%;
+    margin-top: 20px;
+    margin-left: 10%;
 }
 .article {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-
 .details {
     text-align: right;
-    margin: 10px;
-    padding: 10px;
+    line-height: 8px;
+    padding-right: 15px;
     border-right: 1px solid var(--goldcolor);
+    margin-top: 20px;
+}
+.date {
+
+    font-size: large;
 }
 .bookdescription {
     display: grid;
     justify-items: center;
     padding-left: 10px;
+    margin-top: 5px;
 }
 
 .bookdescription h2, .bookdescription p {
