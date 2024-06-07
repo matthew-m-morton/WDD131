@@ -1,0 +1,98 @@
+main {
+    display: grid;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    margin-block: 0;
+}
+form{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 50px auto;
+}
+
+#cardfront, #cardback {
+    background-color: lightgrey;
+    width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    padding: 25px;
+
+}
+
+/* card front formatting */
+#cardfront {
+    /* self */
+    grid-column: 1/5;
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    /* contents */
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 2fr 3fr 2fr;
+    grid-template-columns:  2fr 1fr;
+}
+
+#total{
+    grid-column: 1;
+    grid-row: 1;
+}
+#cardfront img{
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+}
+#cardnumbercontainer {
+    display: grid;
+    grid-column: 1/3;
+}
+#cardholdercontainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#expirationcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+}
+#expirationlabel{
+    grid-column: 1/3;
+}
+
+/* card back formatting */
+#cardback {
+    /* self */
+    grid-column: 2/6;
+    /* contents */
+    display: grid;
+    grid-template-rows: 20px 50px 80px 60px;
+    grid-template-columns: auto 65px;
+
+}
+#stripe {
+    margin-right: -25px;
+    background-color: black;
+    grid-row: 2;
+    grid-column: 1/3;
+}
+#cvvcontainer {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+input{
+    width: 95%;
+
+}
+
+
+/* submit form button */
+#submitform {
+    grid-column: 5;
+    margin: 10px 0;
+}
