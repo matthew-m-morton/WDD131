@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+:root {
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: "Amatic SC";
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+}
+header {
+    font-family: var(--secondary-font);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin: 2.5%;
+}
+#logo {
+    height: 85px;
+    align-self: center;
+}
+h1{
+    font-size: 3em;
+    margin: 0;
+}
+
+form {
+    display: flex;
+
+
+    padding: 2.5%;
+    height: 25px;
+    border-bottom: 1px solid black ;
+}
+button {
+    border: 1px solid black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#searchimg {
+    height: 100%;
+}
+input {
+    width: 100%;
+    border: 1px solid black;
+    color: var(--text-light);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+}
+
+.recipe{
+    margin: 2.5%;
+    padding: 2.5%;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+h3 {
+    font-size: 2em;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    margin: 0px;
+    margin-top: 2.5%;
+
+}
+.recipeimg {
+    padding-bottom: 2.5%;
+}
+.tag {
+    font-weight: bold;
+    padding: 1.5%;
+    border: 1px solid black;
+}
+
+img{
+   max-width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.social img{
+    height: 50px;
+}
+#attribution {
+    font-size: .6em;
+    align-self: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+@media screen and (min-width: 700px){
+    footer{
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2.5%;
+    }
+    .recipeimg{
+        width: 40%;
+        padding-right: 2.5%;
+    }
+    .recipe{
+        flex-direction: row;
+    }
+    .tag{
+        padding: 2.5%;
+    }
+}
