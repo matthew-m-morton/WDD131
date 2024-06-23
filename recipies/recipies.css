@@ -27,12 +27,9 @@ h1{
     font-size: 3em;
     margin: 0;
 }
-
 form {
     display: flex;
-
-
-    padding: 2.5%;
+    padding: 4%;
     height: 25px;
     border-bottom: 1px solid black ;
 }
@@ -50,12 +47,10 @@ input {
     color: var(--text-light);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-
 }
-
 .recipe{
-    margin: 2.5%;
-    padding: 2.5%;
+    margin: 4%;
+    padding: 4%;
     border: 1px solid black;
     border-radius: 5px;
     display: flex;
@@ -73,7 +68,7 @@ h3 {
 
 }
 .recipeimg {
-    padding-bottom: 2.5%;
+    padding-bottom: 4%;
 }
 .tag {
     font-weight: bold;
@@ -104,16 +99,16 @@ footer {
     footer{
         flex-direction: row;
         justify-content: space-between;
-        margin: 2.5%;
+        margin: 4%;
     }
     .recipeimg{
         width: 40%;
-        padding-right: 2.5%;
+        padding-right: 4%;
     }
     .recipe{
         flex-direction: row;
     }
     .tag{
-        padding: 2.5%;
+        padding: 2%;
     }
 }
