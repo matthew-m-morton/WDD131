@@ -2,12 +2,13 @@
 import recipes  from './recipies.mjs';
 import { recipeTemplate } from './templates.mjs';
 
+// random number based off of number of array items
 function getRandomRecipe(recipes) {
     var randomIndex = Math.floor(Math.random() * recipes.length);
     return recipes[randomIndex];
 }
 
-
+// create recipe html from a given list
 function renderRecipes(recipeList) {
     var recipeContainer = document.getElementById('recipe-container');
     recipeContainer.innerHTML = ''; 
@@ -17,6 +18,7 @@ function renderRecipes(recipeList) {
     });
 }
 
+// filters recipes by keywords from the search
 function filterRecipes(query) {
     query = query.toLowerCase();
     return recipes.filter(recipe => {
@@ -27,6 +29,7 @@ function filterRecipes(query) {
     }).sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// handles the search
 function searchHandler(event) {
     event.preventDefault(); 
     const query = document.getElementById('search-bar').value.trim();
@@ -35,7 +38,7 @@ function searchHandler(event) {
 }
 
 
-
+// runs the random function when the program starts and hold the event listener for the search bar
 function init() {
     const randomRecipe = getRandomRecipe(recipes);
     renderRecipes([randomRecipe]);
