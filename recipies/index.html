@@ -13,7 +13,7 @@
     <meta name="description" content="Recipies for tasty treats">
     <meta name="author" content="Matthew Morton">
     <link rel="stylesheet" href="recipies.css">
-    <script src="main.js" defer></script>
+    <script src="main.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -21,35 +21,14 @@
         <h1>RECIPE BOOK</h1>
     </header>
     <body>
-        <form action="/search" method="GET">
-            <input type="text" name="query" class="search-bar" placeholder="Find a recipe">
+        <form id="search-form">
+            <input type="text" name="query" id="search-bar" class="search-bar" placeholder="Find a recipe">
             <button type="submit" class="search-button">
                 <img id="searchimg" src="./images/search.svg" alt="Search">
             </button>
         </form>
-        <div class="recipe">
-            <img class="recipeimg" src="./images/apple-crisp.jpg" alt="apple crisp">
-            <div>
-                <div class="tags">
-                    <span class="tag">dessert</span>
-                </div>
-                <h3 class="recipename">Apple Crisp</h3>
-                <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars"
-                >
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="description">This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
-            </div>
+        <div id="recipe-container">
         </div>
-
-
     </body>
     <footer>
         <a id="attribution" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>

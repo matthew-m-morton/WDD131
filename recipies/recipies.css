@@ -44,7 +44,8 @@ button {
 input {
     width: 100%;
     border: 1px solid black;
-    color: var(--text-light);
+    color: var(--text-dark);
+    border-radius: 0;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
