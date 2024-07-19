@@ -1,0 +1,128 @@
+/* everything that will be used on both pages */
+
+:root {
+    /* change the values below to your colors from your palette */
+    --primary-color:     #800000;
+    --secondary-color:   #568259;
+    --accent1-color:     #d0ccd0;
+    --accent2-color:     #4682b4;
+  
+    /* change the values below to your chosen font(s) */
+    --heading-font:   "papyrus";
+    --paragraph-font: "trebuchet";
+}
+body {
+    background-color: var(--accent1-color);
+    margin: 0;
+}
+main {
+    display: grid;
+    justify-items: center;
+}
+header {
+    background-color: var(--secondary-color);
+    height: 100px;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr ;
+}
+header img {
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+nav a, #copyright {
+    text-align: center;
+    color: var(--accent1-color);
+    text-decoration: none;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+    font-size: larger;
+}
+nav a:hover {
+    background-color: #D0CCD0;
+    color: var(--secondary-color);
+}
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+}
+footer {
+    background-color: var(--secondary-color);
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+
+/* HOME PAGE CSS */
+#welcometitle {
+    font-size: 4vw;
+}
+#welcometext {
+    color: var(--accent1-color);
+    margin: 3% 10% ;
+    padding: 5%;
+    background-color: var(--secondary-color);
+    font-size: 1.5em;
+}
+#startbutton {
+    display: grid;
+    margin: 25px;
+    justify-items: center;
+    align-items: center;
+}
+#startbutton a {
+    background-color: var(--primary-color);
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #D0CCD0;
+}
+#startbutton a:hover {
+    border: solid var(--primary-color) 5px;
+}
+
+
+/* BOSS CALCULATOR CSS */
+.containers {
+    margin: 2.5% 10%;
+    border: solid var(--primary-color) 2px;
+    text-align: center;
+    font-family: var(--paragraph-font);
+    max-width: 750px;
+}
+.containers h2 {
+    font-family: var(--heading-font);
+}
+.buttongroups {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: large;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    
+}
+.hidden {
+    display: none;
+    border: none;
+}
+#arrows {
+    margin-bottom: 20%;
+}
+
+
+
+
+
+
+
+
