@@ -1,5 +1,10 @@
 // This holds all of the reusable funtions
-function createRadioButtons(containerId, array, key, radioName, onChangeHandler) {
+import bosses from "./bosses.mjs";
+import weapons from "./weapons.mjs"
+import arrows from "./arrows.mjs";
+
+
+export function createRadioButtons(containerId, array, key, radioName, onChangeHandler) {
     const uniqueValues = [...new Set(array.map(item => item[key]))];
     const container = document.getElementById(containerId);
 
@@ -12,7 +17,7 @@ function createRadioButtons(containerId, array, key, radioName, onChangeHandler)
         radioInput.name = radioName;
         radioInput.value = value;
         radioInput.id = value;
-        radioInput.addEventListener('change', () => onChangeHandler(value));
+        radioInput.addEventListener('change', onChangeHandler);
 
         const radioLabel = document.createElement('label');
         radioLabel.htmlFor = value;
@@ -23,5 +28,69 @@ function createRadioButtons(containerId, array, key, radioName, onChangeHandler)
         container.appendChild(radioGroupDiv);
     });
 }
-export default createRadioButtons
+
+
+
+
+
+export function handleSelections() {
+    // let selectedBoss = null;
+    // let selectedWeapon = null;
+    let selectedType = document.querySelector('input[name="weapon-type"]:checked').value;
+    if (selectedType === "Bows"){
+        let selectedBoss = document.querySelector('input[name="boss-choice"]:checked').value;
+        let selectedWeapon = document.querySelector('input[name="weapon-name"]:checked').value;
+        let selectedArrow = document.querySelector('input[name="arrow-choice"]:checked').value;
+        if(selectedBoss && selectedWeapon && selectedArrow){ 
+            // retrieves selected object from objects list
+            const boss = bosses.find(obj => obj.boss_name === selectedBoss);
+            const weapon = weapons.find(obj => obj.name === selectedWeapon);
+            const arrow = arrows.find(obj => obj.arrow_name === selectedArrow);
+
+            // calculates damage per damage type after accounting for boss resistances
+            const blunt = boss.blunt * weapon.blunt;
+            const pierce = boss.pierce * (weapon.pierce + arrow.pierce);
+            const slash = boss.slash * weapon.slash;
+            const frost = boss.frost * (weapon.frost + arrow.frost);
+            const fire = boss.fire * (weapon.fire + arrow.fire);
+            const poison = boss.poison * (weapon.poison+ arrow.poison);
+            const spirit = boss.spirit * (weapon.spirit+ arrow.spirit);
+
+            // Adds all damage types
+            const totalDamage = blunt + pierce + slash + frost + fire + poison + spirit;
+
+            const hitsToKill = boss.hit_points/totalDamage
+            console.log(hitsToKill)
+        }
+
+    } else{
+
+
+    let selectedBoss = document.querySelector('input[name="boss-choice"]:checked').value;
+    let selectedWeapon = document.querySelector('input[name="weapon-name"]:checked').value;
+
+    if (selectedBoss && selectedWeapon) {
+        // retrieves selected object from objects list
+        const boss = bosses.find(obj => obj.boss_name === selectedBoss);
+        const weapon = weapons.find(obj => obj.name === selectedWeapon);
+
+        // calculates damage per damage type after accounting for boss resistances
+        const blunt = boss.blunt * weapon.blunt;
+        const pierce = boss.pierce * weapon.pierce;
+        const slash = boss.slash * weapon.slash;
+        const frost = boss.frost * weapon.frost;
+        const fire = boss.fire * weapon.fire;
+        const poison = boss.poison * weapon.poison;
+        const spirit = boss.spirit * weapon.spirit;
+
+        // Adds all damage types
+        const totalDamage = blunt + pierce + slash + frost + fire + poison + spirit;
+
+        console.log(totalDamage);
+        const hitsToKill = boss.hit_points/totalDamage
+        console.log(hitsToKill)
+    }
+}}
+
+
 
