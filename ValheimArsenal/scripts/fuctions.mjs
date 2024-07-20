@@ -60,37 +60,60 @@ export function handleSelections() {
             const totalDamage = blunt + pierce + slash + frost + fire + poison + spirit;
 
             const hitsToKill = boss.hit_points/totalDamage
-            console.log(hitsToKill)
+            
+            showresults(hitsToKill,boss)
+            
+
         }
 
     } else{
 
 
-    let selectedBoss = document.querySelector('input[name="boss-choice"]:checked').value;
-    let selectedWeapon = document.querySelector('input[name="weapon-name"]:checked').value;
+        let selectedBoss = document.querySelector('input[name="boss-choice"]:checked').value;
+        let selectedWeapon = document.querySelector('input[name="weapon-name"]:checked').value;
 
-    if (selectedBoss && selectedWeapon) {
-        // retrieves selected object from objects list
-        const boss = bosses.find(obj => obj.boss_name === selectedBoss);
-        const weapon = weapons.find(obj => obj.name === selectedWeapon);
+        if (selectedBoss && selectedWeapon) {
+            // retrieves selected object from objects list
+            const boss = bosses.find(obj => obj.boss_name === selectedBoss);
+            const weapon = weapons.find(obj => obj.name === selectedWeapon);
 
-        // calculates damage per damage type after accounting for boss resistances
-        const blunt = boss.blunt * weapon.blunt;
-        const pierce = boss.pierce * weapon.pierce;
-        const slash = boss.slash * weapon.slash;
-        const frost = boss.frost * weapon.frost;
-        const fire = boss.fire * weapon.fire;
-        const poison = boss.poison * weapon.poison;
-        const spirit = boss.spirit * weapon.spirit;
+            // calculates damage per damage type after accounting for boss resistances
+            const blunt = boss.blunt * weapon.blunt;
+            const pierce = boss.pierce * weapon.pierce;
+            const slash = boss.slash * weapon.slash;
+            const frost = boss.frost * weapon.frost;
+            const fire = boss.fire * weapon.fire;
+            const poison = boss.poison * weapon.poison;
+            const spirit = boss.spirit * weapon.spirit;
 
-        // Adds all damage types
-        const totalDamage = blunt + pierce + slash + frost + fire + poison + spirit;
+            // Adds all damage types
+            const totalDamage = blunt + pierce + slash + frost + fire + poison + spirit;
 
-        console.log(totalDamage);
-        const hitsToKill = boss.hit_points/totalDamage
-        console.log(hitsToKill)
+
+            const hitsToKill = boss.hit_points/totalDamage
+
+            showresults(hitsToKill,boss)
+
+
+        }
     }
-}}
+}
 
+export function showresults(hits, boss) {
+    const resultcontainer = document.getElementById('results');
 
+    resultcontainer.classList.remove('hidden')
+
+    resultcontainer.innerHTML= `
+    <h2>RESULTS</h2>
+        <div id="resultDetails">
+            <p>You can defeat ${boss.boss_name.toUpperCase()} in only</p>
+            <h3>${Math.ceil(hits)} Hits</h3>
+            <p>Good Luck</p>
+        </div>
+        <img src="./images/${boss.boss_name}.webp" alt="boss image">
+        <div id="restart"><a href="bosscalc.html">TRY AGAIN</a></div>
+            `
+
+}
 
