@@ -36,7 +36,7 @@ nav {
 }
 nav a, #copyright {
     text-align: center;
-    color: var(--accent1-color);
+    color: #000000;
     text-decoration: none;
     justify-self: center;
     align-self: center;
@@ -68,7 +68,7 @@ footer {
     font-size: 4vw;
 }
 #welcometext {
-    color: var(--accent1-color);
+    color: #000000;
     margin: 3% 10% ;
     padding: 5%;
     background-color: var(--secondary-color);
